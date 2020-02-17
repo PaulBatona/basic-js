@@ -8,3 +8,4 @@ module.exports = function countCats(backyard) {
     };
   return number;
 };
+};
