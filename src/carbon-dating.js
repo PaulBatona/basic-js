@@ -3,10 +3,13 @@ const HALF_LIFE_PERIOD= 5730;
 
 module.exports = function dateSample(sampleActivity) {
   let age = 0;
-  if(typeof(sampleActivity)!="string"){
+  let k = 0.693/HALF_LIFE_PERIOD;
+
+  if(typeof(sampleActivity)!="string" || isNaN(parseFloat(sampleActivity)) || sampleActivity<=0 || parseFloat(sampleActivity)>MODERN_ACTIVITY){
     return false;
   }
   else{
-      console.log(Math.round(age = Math.log((MODERN_ACTIVITY/sampleActivity))/HALF_LIFE_PERIOD));
+      age = Math.ceil(Math.log(MODERN_ACTIVITY/parseFloat(sampleActivity))/k);
+      return age;
   }
 };
