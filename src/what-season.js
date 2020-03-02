@@ -6,7 +6,7 @@ module.exports = function getSeason(date) {
     if(month === undefined){
       throw Error;
     }
-    else if(date instanceof String){
+    else if(Object.prototype.toString.call(date) !== '[object Date]'){
       throw Error;
     }
     else{
