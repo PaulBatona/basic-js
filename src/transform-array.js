@@ -1,4 +1,5 @@
 module.exports = function transform(arr) {
+    // console.log(JSON.stringify(arr))
     if(arr.length===0){
         return [];
     }
@@ -32,7 +33,6 @@ module.exports = function transform(arr) {
                 }
             }
         }
-
         return(arr);
     }
     else{
